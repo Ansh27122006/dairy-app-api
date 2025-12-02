@@ -21,7 +21,7 @@ public class Order {
     private String phone;
     private String address;
 
-    @Column(columnDefinition = "jsonb")
+    @Column(columnDefinition = "TEXT")
     private String items;    // Store RAW JSON String
 
     private Double total;
