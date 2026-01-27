@@ -1,5 +1,6 @@
 package com.amardairy.entity;
 
+import com.amardairy.converter.OrderStatusConverter;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
@@ -26,5 +27,11 @@ public class Order {
 
     private Double total;
 
+    @Column(nullable = false)
+    @Convert(converter = OrderStatusConverter.class)
+    private OrderStatus status = OrderStatus.PENDING;
+
     private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
 }
